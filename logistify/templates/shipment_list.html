@@ -4,17 +4,27 @@
 
 {% block content %}
 
-<h1>Shipments</h1>
+<center><h1>Shipments</h1></center>
 
-<table class="table table-striped">
+<div class="container">
+<table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Status</th>
-            <th>Shipment Name</th>
-            <th>Expected Delivery Date</th>
-            
-          
+            <th scope="col">ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Shipment Name</th>
+            <th scope="col">Expected Delivery Date</th>  
         </tr>
     </thead>
+    
+    {% for i in shipment %}
+    <tbody>
+        
+
+
+    </tbody>
+    {% endfor %}
 </table>
+</div>
+
+{% endblock %}
