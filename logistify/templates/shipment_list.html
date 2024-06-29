@@ -13,13 +13,22 @@
             <th scope="col">ID</th>
             <th scope="col">Status</th>
             <th scope="col">Shipment Name</th>
-            <th scope="col">Expected Delivery Date</th>  
+            <th scope="col">Expected Delivery Date</th>
+            <th scope="col">Port of Origin</th>
+            <th scope="col">Port of Destination</th>
         </tr>
     </thead>
     
     {% for i in shipment %}
     <tbody>
-        
+        <tr>
+            <td>{{i.shipment_name}}</td>
+            <td>{{i.shipment_status}}</td>
+            <td>{{i.shipment_description}}</td>
+            <td>{{i.expected_delivery_date}}</td>
+            <td>{{i.shipment_origin}}</td>
+            <td>{{i.shipment_destination}}</td>
+        </tr>
 
 
     </tbody>

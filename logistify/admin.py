@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import *
+from .models import Shipment, Ports
 
-admin.site.register(shipment)
+admin.site.register(Shipment)
+admin.site.register(Ports)
 
 # Register your models here.

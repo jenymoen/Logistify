@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import shipment
+from .models import Shipment
 
 
 def index(request):
     return render(request, 'index.html', {})
 
 def shipment_list(request):
-    shipment = shipment.objects.all()
+    shipment = Shipment.objects.all()
     context = {
         "shipment": shipment,
 
@@ -15,5 +15,7 @@ def shipment_list(request):
     
 
     return render(request, "shipment_list.html", context)
+
+
 
   
