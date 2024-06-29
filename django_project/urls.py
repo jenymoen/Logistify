@@ -20,6 +20,7 @@ from logistify import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("shipment_list/", views.shipment_list, name="shipment_list"),
     path('admin/', admin.site.urls),
 ]
 
