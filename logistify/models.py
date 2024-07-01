@@ -3,7 +3,7 @@ from django.db.models.enums import Choices
 
 
 
-class Ports(models.Model):
+class Port(models.Model):
   port_code = models.CharField(max_length=5, null=True, blank=True)
   port_name = models.CharField(max_length=30, null=True, blank=True)
   port_city = models.CharField(max_length=100, null=True, blank=True)
@@ -11,8 +11,8 @@ class Ports(models.Model):
   latitude = models.FloatField(null=True, blank=True)
   longitude = models.FloatField(null=True, blank=True)
 
-  def __str_(self):
-    return f"{self.port_code}"
+  def __str__(self):
+    return f"{self.port_code+" - "+self.port_name}"
 
 
 class Shipment(models.Model):
@@ -27,7 +27,7 @@ class Shipment(models.Model):
   shipment_value = models.FloatField(null=True, blank=True)
   shipment_cost = models.FloatField(null=True, blank=True)
   shipment_origin = models.CharField(max_length=50, null=True, blank=True)
-  shipment_destination = models.ManyToManyField(Ports)
+  shipment_destination = models.ManyToManyField(Port)
   expected_delivery_date = models.DateField(null=True, blank=True)
   
 
