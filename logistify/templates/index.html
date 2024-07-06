@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,23 +17,14 @@
     <body>
         {% csrf_token %}
 
-        <!-- <button href="{% url 'shipment_list' %}">Shipment List</button> -->
+       
+        <div>
+            <a href="{% url 'shipment_list' %}">Shipment List</a>
+        </div>
+
         
 
-        <button type="button" href="http://www.vg.no">Sjekk VG her</button>
-
-        <div class="container">
-            <br />
-            <h2><strong>Task Tracker 📝</strong></h2>
-
-            <br />
-
-            <ul class="list-group">
-                <li class="list-group-item mb-2">Wash the Car</li>
-                <li class="list-group-item mb-2">Make the Bed</li>
-                <li class="list-group-item mb-2">Walk the Dog</li>
-            </ul>
-        </div>
+        
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

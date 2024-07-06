@@ -48,8 +48,8 @@ class RequestForQuote(models.Model):
   shipment_volume = models.FloatField(null=True, blank=True)
   shipment_value = models.FloatField(null=True, blank=True)
   shipment_cost = models.FloatField(null=True, blank=True)
-  shipment_origin = models.CharField(max_length=50, null=True, blank=True)
-  shipment_destination = models.ManyToManyField(Port)
+  shipment_origin = models.ForeignKey(Port, on_delete=models.CASCADE, related_name='origin_shipments')
+  shipment_destination = models.ForeignKey(Port, on_delete=models.CASCADE, related_name='destination_shipments')
   expected_delivery_date = models.DateField(null=True, blank=True)
   
 

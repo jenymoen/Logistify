@@ -24,6 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('shipment/<str:pk>/', views.shipment_detailView, name="shipment_detail"),
     path('create_rfq/', views.createRFQ, name="create_rfq"),
+    path('rfq_list/', views.rfq_list, name="rfq_list"),
+    path('register/', views.registerPage, name="register"),
+    path('login/', views.loginPage, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
 ]
 
 

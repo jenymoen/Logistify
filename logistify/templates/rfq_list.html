@@ -1,0 +1,37 @@
+{% extends 'base.html'  %}
+
+{% block title %}RFQ List{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1>RFQ List</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>RFQ ID</th>
+                        <th>RFQ Name</th>
+                        <th>RFQ Description</th>
+                        <th>RFQ Date</th>
+                        <th>RFQ Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rfq in rfq_list %}
+                    <tr>
+                        <td>{{ rfq.id }}</td>
+                        <td>{{ rfq.name }}</td>
+                        <td>{{ rfq.description }}</td>
+                        <td>{{ rfq.date }}</td>
+                        <td>{{ rfq.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}
