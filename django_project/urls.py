@@ -22,7 +22,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("shipment_list/", views.shipment_list, name="shipment_list"),
     path('admin/', admin.site.urls),
-    path('shipment/<str:pk>/', views.shipment_detailView, name="shipment_detail")
+    path('shipment/<str:pk>/', views.shipment_detailView, name="shipment_detail"),
+    path('create_rfq/', views.createRFQ, name="create_rfq"),
 ]
 
 
