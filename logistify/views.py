@@ -22,7 +22,8 @@ def shipment_detailView(request, pk):
     shipment = Shipment.objects.all()
 
     context = {
-        
+        "shipment_detailview": shipment_detailview,
+        "shipment": shipment
     }
 
     return render(request, "shipment_details.html", context)

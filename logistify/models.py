@@ -29,12 +29,34 @@ class Shipment(models.Model):
   shipment_origin = models.CharField(max_length=50, null=True, blank=True)
   shipment_destination = models.ManyToManyField(Port)
   expected_delivery_date = models.DateField(null=True, blank=True)
-  
 
   objects = models.Manager()
 
   def __str__(self):
     return self.shipment_name+" - "+self.shipment_description
+
+
+class Quote(models.Model):
+  shipment_name = models.CharField(max_length=100, null=True, blank=True)
+  shipment_description = models.CharField(max_length=100, null=True, blank=True)
+  shipment_status = models.CharField(max_length=100, null=True, blank=True)
+  cargo_ready_date = models.DateField(null=True, blank=True)
+  shipment_date = models.DateField(null=True, blank=True)
+  shipment_time = models.TimeField(null=True, blank=True)
+  shipment_weight = models.FloatField(null=True, blank=True)
+  shipment_volume = models.FloatField(null=True, blank=True)
+  shipment_value = models.FloatField(null=True, blank=True)
+  shipment_cost = models.FloatField(null=True, blank=True)
+  shipment_origin = models.ForeignKey(Port, on_delete="CASCADE", related_name="shipment_origin")
+  shipment_destination = models.ForeignKey(Port, on_delete="CASCADE", related_name="shipment_destination")
+  expected_delivery_date = models.DateField(null=True, blank=True)
+
+  objects = models.Manager()
+
+  def __str__(self):
+    return self.shipment_name+" - "+self.shipment_description
+
+
 
 class Supplier(models.Model):
   supplier_name = models.CharField(max_length=100, null=True, blank=True)
