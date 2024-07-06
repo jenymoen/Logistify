@@ -4,22 +4,23 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="column">
-            Dette er en kolonne 1
+    
+    <div class="container-max-width">
+        <div class="row">
+            <div class="col">
+                <div class="card card-body">
+                    Shipment Name: {{shipment_detailview.shipment_name}}<br>
+                    Shipment Description: {{shipment_detailview.shipment_description}}
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-body">
+                    {{shipment_detailview.shipment_status}}<br>
+                    {{shipment_detailview.expected_delivery_date}}
+                </div>
         </div>
-        <div class="column">
-            Dette er en kolonne 2
-        </div>
-        <div class="column">
-            Dette er en kolonne 3
-        </div>
-
     </div>
-
-</div>
-
+    
 
 
 {% endblock %}

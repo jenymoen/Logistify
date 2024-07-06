@@ -22,7 +22,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("shipment_list/", views.shipment_list, name="shipment_list"),
     path('admin/', admin.site.urls),
-    path('shipment/<str:pk>/', views.shipment_detailView, name="shipment_detail"),
+    path('shipment_detail_view/<str:pk>/', views.shipment_detail_view, name="shipment_detail_view"),
     path('create_rfq/', views.createRFQ, name="create_rfq"),
     path('rfq_list/', views.rfq_list, name="rfq_list"),
     path('register/', views.registerPage, name="register"),
@@ -31,5 +31,3 @@ urlpatterns = [
 ]
 
 
-""" path('', include('logistify.urls')),
-"""

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Shipment, Port, RequestForQuote
 from .forms import *
 from django.utils.timezone import datetime
@@ -60,11 +60,13 @@ def shipment_list(request):
     }  
     return render(request, "shipment_list.html", context)
 
-def shipment_detailView(request, pk):
-    shipment_detailview = Shipment.objects.get(id=pk)
+def shipment_detail_view(request, pk):
+    shipment_detailview = get_object_or_404(Shipment, id=pk)
     shipment = Shipment.objects.all()
 
     context = {
+        "shipment_detailview": shipment_detailview,
+        "shipment": shipment,
         
     }
 

@@ -12,21 +12,23 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>RFQ ID</th>
                         <th>RFQ Name</th>
                         <th>RFQ Description</th>
-                        <th>RFQ Date</th>
+                        <th>RFQ From Port</th>
+                        <th>RFQ To Port</th>
+                        <th>RFQ Cargo Ready Date</th>
                         <th>RFQ Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for rfq in rfq_list %}
+                    {% for rfq in rfq %}
                     <tr>
-                        <td>{{ rfq.id }}</td>
-                        <td>{{ rfq.name }}</td>
-                        <td>{{ rfq.description }}</td>
-                        <td>{{ rfq.date }}</td>
-                        <td>{{ rfq.status }}</td>
+                        <td>{{ rfq.shipment_name }}</td>
+                        <td>{{ rfq.shipment_description }}</td>
+                        <td>{{ rfq.shipment_origin }}</td>
+                        <td>{{ rfq.shipment_destination }}</td>
+                        <td>{{ rfq.cargo_ready_date }}</td>
+                        <td>{{ rfq.shipment_status }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
