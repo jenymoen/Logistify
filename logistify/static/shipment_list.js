@@ -28,3 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+function calculateVolume() {
+  // Assuming you have fields for length, width, and height in your form
+  const length = parseFloat(document.getElementById('id_shipment_length').value) || 0;
+  console.log(length) // Debug log
+  const width = parseFloat(document.getElementById('id_shipment_width').value) || 0;
+  const height = parseFloat(document.getElementById('id_shipment_height').value) || 0;
+  const volume = length * width * height;
+  document.getElementById('shipment_volume_display').textContent = volume.toFixed(2); // Display volume
+  document.getElementById('id_shipment_volume').value = volume.toFixed(2); // Set volume value in the form
+}
+
+document.getElementById('id_shipment_length').addEventListener('input', calculateVolume);
+document.getElementById('id_shipment_width').addEventListener('input', calculateVolume);
+document.getElementById('id_shipment_height').addEventListener('input', calculateVolume);
+
+calculateVolume(); // Initial calculation

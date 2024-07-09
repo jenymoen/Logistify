@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}
 
 {% block title %}Shipments{% endblock %}
 
@@ -8,17 +8,28 @@
     <div class="container-max-width">
         <div class="row">
             <div class="col">
+                <h3 class="center-text">Shipment Details</h3>
                 <div class="card card-body">
                     Shipment Name: {{shipment_detailview.shipment_name}}<br>
-                    Shipment Description: {{shipment_detailview.shipment_description}}
+                    Shipment Description: {{shipment_detailview.shipment_description}}<br>
+                    Weight: {{shipment_detailview.shipment_weight}}<br>
+                    Volume: {{shipment_detailview.shipment_volume}}<br>
                 </div>
             </div>
             <div class="col">
+                <h3 class="center-text">Shipment Status</h3>
                 <div class="card card-body">
                     Shipment Status: {{shipment_detailview.shipment_status}}<br>
                     Exptected Delivery Status: {{shipment_detailview.expected_delivery_date}}
                 </div>
-            </div>    
+            </div>
+            <div class="col">
+                <h3 class="center-text">Timeline</h3>
+                <div class="card card-body">
+                    Shipment Status: {{shipment_detailview.shipment_status}}<br>
+                    Exptected Delivery Status: {{shipment_detailview.expected_delivery_date}}
+                </div>
+            </div>     
         </div>
     </div>
     

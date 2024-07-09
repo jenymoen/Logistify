@@ -9,22 +9,32 @@
 
 <div class='row'>
     <div class='col'>
-        
-        <form action="" method="POST">
-            {% csrf_token %}
-            
-            <table>
-            {{ form|crispy }}
-            </table>
-
-            <input type="submit" name="Submit">
-        </form>
+        <div class='card'>
+            <div class='card-header'>
+                <h3>Create RFQ</h3>
+            </div>
+            <div class='card-body'>
+                <form method='POST'>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div>
+                        <label>Shipment Volume: <span id="shipment_volume_display">0</span></label>
+                    </div>
+                    <button type='submit' class='btn btn-primary'>Create RFQ</button>
+                </form>
+            </div>
+            <!-- <div>
+                <label for="{{ form.shipment_volume.id_for_label }}">{{ form.shipment_volume.label }}</label>
+                {{ form.shipment_volume }}
+            </div> -->
+        </div>
     </div>
-</div>
+</div>    
 <div class='row'>
-    <div class='col'>
+    <div class='card-body'>
         <a href="{% url 'shipment_list' %}">Back to Shipments</a>
     </div>
+</div>
 {% endblock %}
 
 

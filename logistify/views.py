@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Shipment, Port, RequestForQuote
+from .models import Shipment, Port, RequestForQuote, Item, CommodityClassification
 from .forms import *
 from django.utils.timezone import datetime
+import requests, json
 
 
 #views code for login function
@@ -100,6 +101,23 @@ def rfq_list(request):
     # form = ShipmentForm(instance=shipment)
 
 
+def item_list(request):
+    item = Item.objects.all()
 
+    context = {
+            "item": item,
+    }
+    return render(request, "item_list.html", context)
+
+
+
+def populate_commodity_classifications():
+    response = requests.get('https://api.maersk.com/commodity-classifications?commodityName=all&cargoType=DRY')
+    if response.status_code == 200:
+        commodities = response.json()  # Assuming the response is a JSON list
+        for commodity in commodities:
+            CommodityClassification.objects.create(
+                commodity_id=commodity['commodityCode'],
+            )
 
   

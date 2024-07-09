@@ -1,0 +1,38 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Item No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Item Value</th>
+                <th scope="col">Expected Delivery Date</th>
+                <th scope="col">Port of Origin</th>
+                <th scope="col">Port of Destination</th>
+            </tr>
+        </thead>
+        
+        {% for i in item %}
+        <tbody>
+            <tr class="item-record" data-item-id="{{ i.id }}">
+                <td>{{i.item_number}}</td>
+                <td>{{i.item_name}}</td>
+                <td>{{i.tem_value}}</td>
+            </tr>
+    
+    
+        </tbody>
+        {% endfor %}
+    </table>
+    </div>
+
+
+{% endblock %}
+
+
+
